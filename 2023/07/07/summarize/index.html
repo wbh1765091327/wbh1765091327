@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="博客主题及其选取原因为什么选择Hexo-theme-async主题挑选主题对一个具有选择困难症的我非常困难，在选择Hexo-theme-async主题之前，我也试过其他的一些主题，例如ocean、hexo-theme-sakura，但我仍觉得过于单调或者花哨。而当我第一次看见Hexo-theme-async主题我就决定使用它。首先，它的外观是简洁又不过于单调的，尤其是侧边栏与上方条幅的设计，十分美">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署静态网页博客总结">
+<meta property="og:url" content="http://example.com/2023/07/07/summarize/index.html">
+<meta property="og:site_name" content="立德树人17的小站">
+<meta property="og:description" content="博客主题及其选取原因为什么选择Hexo-theme-async主题挑选主题对一个具有选择困难症的我非常困难，在选择Hexo-theme-async主题之前，我也试过其他的一些主题，例如ocean、hexo-theme-sakura，但我仍觉得过于单调或者花哨。而当我第一次看见Hexo-theme-async主题我就决定使用它。首先，它的外观是简洁又不过于单调的，尤其是侧边栏与上方条幅的设计，十分美">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2023-07-07T04:07:07.000Z">
+<meta property="article:modified_time" content="2023-07-07T13:02:38.447Z">
+<meta property="article:author" content="王博海">
+<meta property="article:tag" content="总结">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/404.jpg">
+
+
+<title >部署静态网页博客总结</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.0.9' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.0.9' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"王博海","root":"/","typed_text":["Life Master"],"theme_version":"2.0.9","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":200},"notice_outdate":{"enable":true,"style":"flat","limit_day":365,"position":"top"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-07-07 21:02:38"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.0.9" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="立德树人17的小站" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            欢迎来到~<span>立德树人的温馨小窝~</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/archives/" target="">
+                    归档
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/gallery/" target="">
+                    相册
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3" src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/155c9e20b0b2dbf6009f8b8e9f3b9a3.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            部署静态网页博客总结
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2023
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    
+
+<div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
+    
+        <div class="trm-user-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item">
+                    <i class="iconfont fas fa-user-alt"></i>
+                </div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active">
+                    <i class="iconfont fas fa-th-list"></i>
+                </div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/1f26d1001431f7e386b8df46d95be4d.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        立德树人17
+    </h5>
+    
+        <div class="trm-label">
+            I`m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+                <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="/atom.xml" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fas fa-rss"></i>
+        </a>
+    
+        <a href="https://github.com/wbh1765091327" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://user.qzone.qq.com/1765091327/main" title="qq" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-qq"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+                <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                姓名:
+            </div>
+            <div class="trm-label trm-label-light">
+                王博海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                21
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                浙江 杭州
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                健身|音乐|美食
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                联系方式:
+            </div>
+            <div class="trm-label trm-label-light">
+                19157682833
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+                
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:bhwang171@163.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+            </div>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <div class="post-toc">
+    <ol class="toc"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#博客主题及其选取原因"  data-scroll-to="#博客主题及其选取原因"><span class="toc-number">1.</span> <span class="toc-text">博客主题及其选取原因</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#为什么选择Hexo-theme-async主题"  data-scroll-to="#为什么选择Hexo-theme-async主题"><span class="toc-number">1.1.</span> <span class="toc-text">为什么选择Hexo-theme-async主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#博客页面布局及其设计思路"  data-scroll-to="#博客页面布局及其设计思路"><span class="toc-number">2.</span> <span class="toc-text">博客页面布局及其设计思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#首页"  data-scroll-to="#首页"><span class="toc-number">2.1.</span> <span class="toc-text">首页</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#文章详细页面"  data-scroll-to="#文章详细页面"><span class="toc-number">2.2.</span> <span class="toc-text">文章详细页面</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#归档"  data-scroll-to="#归档"><span class="toc-number">2.3.</span> <span class="toc-text">归档</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#关于我"  data-scroll-to="#关于我"><span class="toc-number">2.4.</span> <span class="toc-text">关于我</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#相册"  data-scroll-to="#相册"><span class="toc-number">2.5.</span> <span class="toc-text">相册</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#博客功能实现及其技术选择"  data-scroll-to="#博客功能实现及其技术选择"><span class="toc-number">3.</span> <span class="toc-text">博客功能实现及其技术选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#相册功能"  data-scroll-to="#相册功能"><span class="toc-number">3.1.</span> <span class="toc-text">相册功能</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#评论功能"  data-scroll-to="#评论功能"><span class="toc-number">3.2.</span> <span class="toc-text">评论功能</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#本地搜索功能"  data-scroll-to="#本地搜索功能"><span class="toc-number">3.3.</span> <span class="toc-text">本地搜索功能</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#文章字数统计"  data-scroll-to="#文章字数统计"><span class="toc-number">3.4.</span> <span class="toc-text">文章字数统计</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#RSS订阅"  data-scroll-to="#RSS订阅"><span class="toc-number">3.5.</span> <span class="toc-text">RSS订阅</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#文章置顶"  data-scroll-to="#文章置顶"><span class="toc-number">3.6.</span> <span class="toc-text">文章置顶</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#live2d模型"  data-scroll-to="#live2d模型"><span class="toc-number">3.7.</span> <span class="toc-text">live2d模型</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#其余功能"  data-scroll-to="#其余功能"><span class="toc-number">3.8.</span> <span class="toc-text">其余功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#博客样式设计及其美学考量"  data-scroll-to="#博客样式设计及其美学考量"><span class="toc-number">4.</span> <span class="toc-text">博客样式设计及其美学考量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#布局和结构"  data-scroll-to="#布局和结构"><span class="toc-number">4.1.</span> <span class="toc-text">布局和结构</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#配色方案"  data-scroll-to="#配色方案"><span class="toc-number">4.2.</span> <span class="toc-text">配色方案</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#图像和多媒体"  data-scroll-to="#图像和多媒体"><span class="toc-number">4.3.</span> <span class="toc-text">图像和多媒体</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#响应式设计"  data-scroll-to="#响应式设计"><span class="toc-number">4.4.</span> <span class="toc-text">响应式设计</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#一致性与加载速度"  data-scroll-to="#一致性与加载速度"><span class="toc-number">4.5.</span> <span class="toc-text">一致性与加载速度</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#问题及其解决方法（总结）"  data-scroll-to="#问题及其解决方法（总结）"><span class="toc-number">5.</span> <span class="toc-text">问题及其解决方法（总结）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#万事开头难"  data-scroll-to="#万事开头难"><span class="toc-number">5.1.</span> <span class="toc-text">万事开头难</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#Rename某个文件后上传到仓库，但仓库文件夹并未修改"  data-scroll-to="#Rename某个文件后上传到仓库，但仓库文件夹并未修改"><span class="toc-number">5.2.</span> <span class="toc-text">Rename某个文件后上传到仓库，但仓库文件夹并未修改</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#实现相册时遇到的问题"  data-scroll-to="#实现相册时遇到的问题"><span class="toc-number">5.3.</span> <span class="toc-text">实现相册时遇到的问题</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#实现评论功能时遇到的问题"  data-scroll-to="#实现评论功能时遇到的问题"><span class="toc-number">5.4.</span> <span class="toc-text">实现评论功能时遇到的问题</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#总结"  data-scroll-to="#总结"><span class="toc-number">5.5.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+</div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div id="page-content" class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            07/07
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            12:07
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            王博海
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="博客主题及其选取原因"><a href="#博客主题及其选取原因" class="headerlink" title="博客主题及其选取原因"></a>博客主题及其选取原因</h2><h3 id="为什么选择Hexo-theme-async主题"><a href="#为什么选择Hexo-theme-async主题" class="headerlink" title="为什么选择Hexo-theme-async主题"></a>为什么选择Hexo-theme-async主题</h3><p>挑选主题对一个具有选择困难症的我非常困难，在选择<a target="_blank" rel="noopener" href="https://www.imalun.com/">Hexo-theme-async</a>主题之前，我也试过其他的一些主题，例如<a target="_blank" rel="noopener" href="https://zhwangart.com/">ocean</a>、<a target="_blank" rel="noopener" href="https://sakura.hojun.cn/">hexo-theme-sakura</a>，但我仍觉得过于单调或者花哨。而当我第一次看见Hexo-theme-async主题我就决定使用它。首先，它的外观是简洁又不过于单调的，尤其是侧边栏与上方条幅的设计，十分美观。经过我的自定义设计后，我认为十分具有氛围感。除此之外，我还能根据喜好自定义许多有趣的功能，例如在首页的分类卡片、文章打赏、悬浮按钮块等等。</p>
+<h2 id="博客页面布局及其设计思路"><a href="#博客页面布局及其设计思路" class="headerlink" title="博客页面布局及其设计思路"></a>博客页面布局及其设计思路</h2><p>我在博客中主要设置了四个模块，其中包含首页、归档、关于、相册。在这四个模块我都设置了导航栏、侧边栏横幅以及页脚，其中横幅在每个模块都有我精挑细选的背景图与喜欢的一些诗句。而除了首页与归档模块以外，我还设置了twikoo评论供读者发表评论</p>
+<h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><p>在首页中除了固定的四个固定的导航栏、侧边栏、横幅以及页脚，我在博客列表上设置了两个分类卡片（后续增多也可以自己定义个数），读者可以直接点击查看在该分类的文章。而在下方则是根据时间倒序排列的文章卡片，包含分类、标题、时间、字数以及阅读时间。在左右两边则设置了由<a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d">hexo-helper-live2d</a>加载的Live2D模型和固定悬浮按钮（单双栏切换，回到顶部）。<br><img src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/452fab081130dffd4b27a7bb3850079.png" alt="首页" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="文章详细页面"><a href="#文章详细页面" class="headerlink" title="文章详细页面"></a>文章详细页面</h3><p>在该页面，侧边栏多了一个切换个人信息与目录的功能，读者可以方便地切换到子标题内容。在正文上方则设置了三个卡片，分别显示发布日期、发布时间以及发布作者。在正文底部，我设置了打赏按钮，读者可以点击按钮并扫码打赏。再往下拉则显示了其他的文章卡片以及评论功能。而在页面右侧则多了一个阅读模式，点击即可全屏尽享阅读。<br><img src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/15093ce49ffa789ead08c3639a995c7.png" alt="文章详细页面" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h3><p>在这个模块，除了Hexo自带的按时间倒序排列的归档外，我还设置了分类与标签归档，读者可以在导航栏根据需求选择。<br><img src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/a62cd280340014f06d3c48fa40ef609.png" alt="归档" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>在这个模块主要简单地介绍了下我自己和博客的内容、隐私权及评论等。<br><img src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/1ae1ea039a22e6f76ec07c0e1fa3b54.png" alt="关于我" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h3><p>在这个模块，主要有相册卡片和评论，读者可以点击卡片进入详细的相册，里面包含了许多图片。由于照片过多，我还特地学习了在github上部署图床进行托管。<br><img src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/69e194fccd5185a3936ee13c7634914.png" alt="关于我" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="博客功能实现及其技术选择"><a href="#博客功能实现及其技术选择" class="headerlink" title="博客功能实现及其技术选择"></a>博客功能实现及其技术选择</h2><h3 id="相册功能"><a href="#相册功能" class="headerlink" title="相册功能"></a>相册功能</h3><p>在制作该页面时，我了解到什么是图床以及如何部署图床，其中我使用了PicGo软件，能够方便且快速的将图片上传到github上，在这个准备工作好费时间较长。而页面创建就比较简单了，代码如下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建</span></span><br><span class="line">$ hexo new page gallery</span><br><span class="line"><span class="comment"># 相册卡片</span></span><br><span class="line">&lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">&#123;% gallery <span class="string">&#x27;标题&#x27;</span> <span class="string">&#x27;描述&#x27;</span> <span class="string">&#x27;link&#x27;</span> url %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="comment"># 详细页面</span></span><br><span class="line">&#123;% galleryGroup %&#125;</span><br><span class="line">&#123;% galleryItem url %&#125;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&#123;% endgalleryGroup %&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h3><p>该功能需要用到Twikoo插件，提供了一种简单、快速的方式来为Hexo博客添加评论系统。它支持使用微信、QQ等社交账号登录评论，并且提供了数据统计和管理功能。要使用该功能需要遵循以下步骤：<br>1.在腾讯云开发平台注册账号，并创建一个云开发环境。<br>2.在Hexo博客的配置文件中添加Twikoo插件的配置，包括设置腾讯云开发的环境ID和一个用于标识你的博客的唯一ID。<br>3.在你的Hexo博客页面中添加Twikoo插件的代码。这个代码会生成评论框和评论列表，以及相应的登录和数据统计功能。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 部署</span></span><br><span class="line">comment:</span><br><span class="line">  twikoo:</span><br><span class="line">    <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">    envId: xxxxxxxxxxxxxxx <span class="comment"># 腾讯云环境id</span></span><br><span class="line">    region: <span class="comment"># 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数</span></span><br><span class="line">    option: <span class="comment"># 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数</span></span><br></pre></td></tr></table></figure>
+
+<p>4.重新生成静态网页，并将生成的网页部署到服务器上。</p>
+<h3 id="本地搜索功能"><a href="#本地搜索功能" class="headerlink" title="本地搜索功能"></a>本地搜索功能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ npm install hexo-generator-searchdb</span><br><span class="line"><span class="comment">#在_config.async.yml配置</span></span><br><span class="line">search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="built_in">type</span>: <span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章字数统计"><a href="#文章字数统计" class="headerlink" title="文章字数统计"></a>文章字数统计</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ npm install hexo-wordcount</span><br><span class="line"><span class="comment">#在_config.async.yml配置</span></span><br><span class="line">wordcount:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  count: <span class="literal">true</span></span><br><span class="line">  time: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="RSS订阅"><a href="#RSS订阅" class="headerlink" title="RSS订阅"></a>RSS订阅</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ npm install hexo-generator-feed</span><br><span class="line"><span class="comment">#在_config.async.yml配置</span></span><br><span class="line">sidebar:</span><br><span class="line">  social:</span><br><span class="line">    - icon: fas fa-rss</span><br><span class="line">      url: atom.xml</span><br></pre></td></tr></table></figure>
+
+<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#直接在文章Front Matter中配置</span></span><br><span class="line">sticky: 100</span><br></pre></td></tr></table></figure>
+
+<h3 id="live2d模型"><a href="#live2d模型" class="headerlink" title="live2d模型"></a>live2d模型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装</span></span><br><span class="line">$ npm install hexo-helper-live2d</span><br><span class="line"><span class="comment">#在_config.async.yml配置</span></span><br><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 推荐使用 CDN 来加载</span></span><br><span class="line">  scriptFrom: unpkg</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  debug: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    <span class="comment"># 推荐使用 CDN 来加载模型</span></span><br><span class="line">    use: https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json</span><br><span class="line">  display:</span><br><span class="line">    position: left</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: 0.7</span><br></pre></td></tr></table></figure>
+
+<h3 id="其余功能"><a href="#其余功能" class="headerlink" title="其余功能"></a>其余功能</h3><p>除了以上需要下载安装插件或依赖的功能，还有许多直接在_config.async.yml配置就能实现的功能，比如切换主题模式、社交图标按钮、打字动画、横幅页脚、显示运行时间、打赏功能、文章详细页面显示目录、悬浮按钮块等等有趣且实用的功能，尽情探索~</p>
+<h2 id="博客样式设计及其美学考量"><a href="#博客样式设计及其美学考量" class="headerlink" title="博客样式设计及其美学考量"></a>博客样式设计及其美学考量</h2><h3 id="布局和结构"><a href="#布局和结构" class="headerlink" title="布局和结构"></a>布局和结构</h3><p>在布局方面，我的博客拥有一个清晰、易于导航的布局，有侧边栏、导航栏以及页脚，形成包围之势，使读者能够轻松找到他们感兴趣的内容。在结构方便，博客页面结构具有层次感，主要内容之间间隔清晰、分布明确，用户体验感非常nice！</p>
+<h3 id="配色方案"><a href="#配色方案" class="headerlink" title="配色方案"></a>配色方案</h3><p>读者可以自行选择主题颜色，分为日间与夜晚，可以通过导航栏切换按钮进行切换，可以帮助读者根据自己的喜好和环境条件选择适合的主题，提升他们在博客上的阅读体验。</p>
+<h3 id="图像和多媒体"><a href="#图像和多媒体" class="headerlink" title="图像和多媒体"></a>图像和多媒体</h3><p>这一方面主要体现在博客的横幅与可爱的live2d模型，其中每个模块的横幅我都选择了不同的色彩的图片，都是我精挑细选、极具氛围感的壁纸图，并且上面的每一句诗句也是我有感而选的。</p>
+<h3 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h3><p>我选择的主题具有响应式设计，支持手机、平板、PC 多种平台。</p>
+<h3 id="一致性与加载速度"><a href="#一致性与加载速度" class="headerlink" title="一致性与加载速度"></a>一致性与加载速度</h3><p>我的每个模块都具有固定的导航栏与结构，并且用户也可以根据自己喜好通过悬浮按钮进行切换单双栏。由于我的博客是部署在github pages上，因此加载速度受到加速器速度影响（我自己测试时挺快的，图片需要零点几毫秒加载）。</p>
+<h2 id="问题及其解决方法（总结）"><a href="#问题及其解决方法（总结）" class="headerlink" title="问题及其解决方法（总结）"></a>问题及其解决方法（总结）</h2><h3 id="万事开头难"><a href="#万事开头难" class="headerlink" title="万事开头难"></a>万事开头难</h3><p>选择这个项目一个原因是因为我觉得很有趣，另一个原因则是其他的我并不擅长。当我第一次读完文档的时候，唯一的感觉就是茫然，只明白是要我做一个静态网页博客，其他的都没看明白。什么是Hexo框架？怎么部署到Github Pages上？Markdown语法用在哪？我该怎么编写博客等等疑问。经过不断地询问Chat GPT与学习B站教学视频，我才对这个项目整个有了大致的一个理解，后面做起来也有了明确的目标。</p>
+<h3 id="Rename某个文件后上传到仓库，但仓库文件夹并未修改"><a href="#Rename某个文件后上传到仓库，但仓库文件夹并未修改" class="headerlink" title="Rename某个文件后上传到仓库，但仓库文件夹并未修改"></a>Rename某个文件后上传到仓库，但仓库文件夹并未修改</h3><p>问题：由于命名问题，我修改了source&#x2F;_post下md文件的名称，上传到github仓库后（改名前上传过），发现部署的网站无法进入到改过名的文章页面</p>
+<p>解决方法：不知道出于什么原因，即使执行hexo clean清除public文件，且删除了github仓库里的原文件，重新生成public文件并上传后，仓库里的该文章的文件夹名字并未改变，这就导致网页里跳转到的目录是修改后的，而仓库里则是原本的，因此会出现404 not found。只能通过git命令行修改文件夹名称。</p>
+<h3 id="实现相册时遇到的问题"><a href="#实现相册时遇到的问题" class="headerlink" title="实现相册时遇到的问题"></a>实现相册时遇到的问题</h3><p>问题：在实现相册页面时，起初我部署图床在github后，按照网络教程的方法是，只有点击download按钮后跳出的url才能正常显示在页面，然而并没有作用。我也尝试了直接复制网址栏的url同样没有作用，在网上搜索了好久仍未找到方法。</p>
+<p>解决方法：在经过一系列搜索后，我尝试右键图片复制网络地址，结果竟然可以用。但是第二天就失效了，但我又发现上传图片的PicGo软件里有个功能叫相册，可以直接选择上传的图片复制其url，非常方法。</p>
+<h3 id="实现评论功能时遇到的问题"><a href="#实现评论功能时遇到的问题" class="headerlink" title="实现评论功能时遇到的问题"></a>实现评论功能时遇到的问题</h3><p>问题：按照Twikoo官方文档部署完腾讯云开发平台的云开发环境、云函数等，以及在_config.async.yml配置后，我的页面并未出现评论功能。</p>
+<p>解决方法：我找了好久没找到问题，甚至尝试了使用Vercel部署还是失败，最后我在腾讯云开发平台里，将localhost:4000部署上去后，发现本地以及显示了评论。这就有个疑问，我原本部署的wbh1765091327.github.io为什么没有作用？我猜测可能的原因就是部署在github上有一定的延迟，虽然网上说只需等待一分钟，但实际需要更长的时间。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总的来说，虽然过程遇到了许多大大小小的问题，但收获还是丰富的。首先对于github的使用重新熟悉了起来，同时也掌握了使用Hexo框架和一些有趣的插件给自己搭建一个好看的博客且部署到github pages上，以及一些其他有用的经验比如图床，腾讯云开发平台的使用等等，对我来说还是收获颇丰的。</p>
+
+</article>
+    
+    <div class="trm-reward">
+        
+            <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
+                <i class="iconfont fas fa-hand-holding-usd"></i>
+            </span>
+        
+        <p class="trm-reward-comment">如果对你有帮助就打赏点吧求求你辣~</p>
+        <div id="qr" style="display:none;">
+            
+                <div style="display:inline-block">
+                    <a rel="noopener noreferrer" href='https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/6ff0cd7c5d9374499fad3cd67d4755f.jpg' target='_blank' >
+                       <img src="https://cdn.jsdelivr.net/gh/wbh1765091327/blogimg/6ff0cd7c5d9374499fad3cd67d4755f.jpg" alt="支付宝" loading="lazy">
+                    </a>
+                    <p>支付宝</p>
+                </div>
+            
+        </div>
+    </div>
+
+    
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/2023/07/01/myfirst/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/../images/img2.jpg">
+                </span>
+                <h6 class="trm-op-title">内啡肽与多巴胺的区别</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/01</li>
+                <li>22:49</li>
+                <li>健身经验</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50">
+    <div id="tcomment"></div>
+</div>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.0.9
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("07/01/2023 17:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.0.9"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.0.9"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+
+            
+<script src="https://unpkg.com/twikoo@1.6.7/dist/twikoo.all.min.js" data-swup-reload-script data-reset="true"></script>
+
+            <script data-swup-reload-script>
+                twikoo.init({
+                    ...{"enable":true,"envId":"wbh-6gsz42okc03e1b04","region":null,"option":null},
+                    el:'#tcomment'
+                }).then(function () {
+                    let container = document.querySelector('body>.tk-admin-container')
+                    if(container) container.remove()
+                    document.body.append(document.querySelector('.tk-admin-container'))
+                });;
+            </script>
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="/js/main.js?v=2.0.9"></script>
+
+<script src="https://unpkg.com/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>
